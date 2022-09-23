@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+:root {
+    --bg-body: #ecf2f8;
+    --font-family:'Barlow Semi Condensed', sans-serif;
+}
+
+body {
+    background-color: var(--bg-body);
+    font-size: 13px;
+    font-family: var(--font-family);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 
+    "area1 area1 area2 area5"
+    "area3 area4 area4 area5";
+    gap: 20px;
+    width: 80%;
+}
+
+.container .grid-area {
+    background-color: var(--bg);
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .grid-area:nth-child(1) {
+    background-image: url(./images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 80% 0;
+}
+
+.container .grid-area .info {
+    display: flex;
+    gap: 15px;
+}
+
+.grid-area .info .avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #ffffff50;
+}
+
+.grid-area .info .name-info p {
+    color: #ffffffcc;
+    margin: 0;
+}
+
+.grid-area .info p:nth-child(2) {
+    margin-top: 2px;
+    font-size: .8em;
+    color: #ffffff50;
+}
+
+.container .grid-area h2 {
+    color: #fffffffd;
+    margin-bottom: 10px;
+}
+
+.container .grid-area p {
+    color: #ffffff73;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.container .grid-area:nth-child(3) h2,
+.container .grid-area:nth-child(5) h2 {
+    color: #444;
+}
+
+.container .grid-area:nth-child(3) p,
+.container .grid-area:nth-child(5) p {
+    color: #111111a2;
+}
+
+.area1 {
+    grid-area: area1;
+}
+
+.area2 {
+    grid-area: area2;
+    width: 275px;
+}
+
+.area3 {
+    grid-area: area3;
+    width: 250px;
+}
+
+.area4 {
+    grid-area: area4;
+}
+
+.area5 {
+    grid-area: area5;
+    width: 250px;
+}
+
+.area5 .high-p {
+    line-height: 16.5px;
+}
+
+@media (max-width: 1000px) {
+    .container {
+        margin: 40px;
+        grid-template-areas: 
+        "area1"
+        "area2"
+        "area3"
+        "area4"
+        "area5";
+    }
+    .area2,
+    .area3,
+    .area5 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        margin: 40px;
+        grid-template-areas: 
+        "area1"
+        "area2"
+        "area3"
+        "area4"
+        "area5";
+    }
+    .area2,
+    .area3,
+    .area5 {
+        width: 1fr;
+    }
+}
+@media (min-width:900px) and (max-width: 1300px) {
+    .container {
+        margin: 40px;
+        grid-template-areas: 
+        "area1 area1"
+        "area2 area3"
+        "area5 area5"
+        "area4 area4";
+    }
+        .area2,
+        .area3,
+        .area5 {
+            width: 100%;
+        }
+}
